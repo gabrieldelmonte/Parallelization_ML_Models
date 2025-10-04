@@ -249,9 +249,8 @@ fn get_proque() -> &'static ProQue {
 
                 barrier(CLK_LOCAL_MEM_FENCE);
 
-                for (int k = 0; k < TS; ++k) {
+                for (int k = 0; k < TS; ++k)
                     sum += As[local_row * TS + k] * Bs[k * TS + local_col];
-                }
 
                 barrier(CLK_LOCAL_MEM_FENCE);
             }
